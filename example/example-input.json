@@ -1,0 +1,44 @@
+{
+  "general": {
+    "name": "Exemple de projet",
+    "quickDescription": "Ceci est un exemple de projet",
+    "type": "e-commerce",
+    "usersTargeted": "Adultes",
+    "slogan": "Achetez en ligne avec nous",
+    "aboutUs": "Nous sommes une entreprise de e-commerce",
+    "stack": {
+      "frontend": "React",
+      "backend": "Node",
+      "database": "MongoDB"
+    },
+    "pages": [
+      {
+        "name": "Accueil",
+        "content": "Bienvenue sur notre site",
+        "elements": ["image", "texte"]
+      },
+      {
+        "name": "Produits",
+        "content": "Liste de nos produits",
+        "elements": ["liste", "filtres"]
+      }
+    ],
+    "possibleOthersPages": true,
+    "mainFeatures": ["Paiement en ligne", "Livraison rapide"],
+    "supplementaryInfos": ["Nous sommes une entreprise responsable"]
+  },
+  "design": {
+    "colorPalette": {
+      "primary": "#3498db",
+      "secondary": "#f1c40f",
+      "tertiary": "#2ecc71"
+    },
+    "typography": {
+      "primary": "Arial",
+      "secondary": "Helvetica"
+    },
+    "animationLevel": 2,
+    "logo": "image3.png",
+    "images": ["image1.jpg", "image2.png"]
+  }
+}

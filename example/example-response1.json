@@ -1,0 +1,130 @@
+{
+  "name": "Exemple_de_projet",
+  "type": "folder",
+  "children": [
+    {
+      "name": "backend",
+      "type": "folder",
+      "children": [
+        {
+          "name": "app.js",
+          "type": "file",
+          "contents": [
+            "Importation des modules nécessaires (express, cors, dotenv, etc.)",
+            "Configuration de l'application (middlewares, CORS, parsers JSON)",
+            "Définition des routes principales",
+            "Connexion à la base de données",
+            "Lancement du serveur sur un port défini"
+          ]
+        },
+        {
+          "name": "config.js",
+          "type": "file",
+          "contents": [
+            "Définition des variables de configuration (DB_URI, PORT, SECRET_KEY, etc.)",
+            "Exportation des paramètres pour utilisation dans d'autres fichiers"
+          ]
+        },
+        {
+          "name": "routes",
+          "type": "folder",
+          "children": [
+            {
+              "name": "index.js",
+              "type": "file",
+              "contents": [
+                "Importation d'express et création du routeur",
+                "Définition des routes de base",
+                "Exportation du routeur pour utilisation dans app.js"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "frontend",
+      "type": "folder",
+      "children": [
+        {
+          "name": "src",
+          "type": "folder",
+          "children": [
+            {
+              "name": "pages",
+              "type": "folder",
+              "children": [
+                {
+                  "name": "Accueil.jsx",
+                  "type": "file",
+                  "contents": [
+                    "Importation des modules React et hooks nécessaires",
+                    "Définition du composant Accueil avec un state éventuel",
+                    "Affichage des éléments principaux (bannière, texte de bienvenue, CTA)",
+                    "Ajout des styles et animations si besoin"
+                  ]
+                },
+                {
+                  "name": "Produits.jsx",
+                  "type": "file",
+                  "contents": [
+                    "Importation des modules React et hooks nécessaires",
+                    "Récupération des produits via un API call (useEffect, fetch ou axios)",
+                    "Affichage d'une liste dynamique de produits sous forme de cartes",
+                    "Ajout de filtres et d'un système de recherche"
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "components",
+              "type": "folder",
+              "children": [
+                {
+                  "name": "Header.jsx",
+                  "type": "file",
+                  "contents": [
+                    "Définition du composant Header (logo, navigation, bouton de connexion)",
+                    "Ajout d'un état pour gérer le menu mobile",
+                    "Intégration des styles dynamiques selon l'état de l'utilisateur"
+                  ]
+                },
+                {
+                  "name": "Footer.jsx",
+                  "type": "file",
+                  "contents": [
+                    "Affichage des liens utiles (mentions légales, contact, réseaux sociaux)",
+                    "Ajout d'un copyright dynamique (année actuelle)"
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "styles",
+              "type": "folder",
+              "children": [
+                {
+                  "name": "main.css",
+                  "type": "file",
+                  "contents": [
+                    "Définition des styles généraux (body, h1-h6, p, a)",
+                    "Mise en place des variables CSS pour la palette de couleurs",
+                    "Ajout des classes utilitaires et réutilisables"
+                  ]
+                },
+                {
+                  "name": "responsive.css",
+                  "type": "file",
+                  "contents": [
+                    "Définition des breakpoints pour différentes tailles d'écran",
+                    "Ajustements spécifiques pour mobile et tablette"
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
