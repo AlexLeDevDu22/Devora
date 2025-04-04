@@ -51,9 +51,11 @@ async function generateMissedInfos(input) {
 
   const prompt =
     "Maintenant tu vas me commencer le projet en remplissant les infos essentiel pour son dévelopement, redonne moi juste la json complété, si on demande des stacks, tu peux mettre null si tu estime qu'elle n'est pas necessaire: " +
-    stringify(infos);
+    JSON.stringify(infos);
 
   const response = JSON.parse(await LLMPrompt(prompt, true));
+
+  console.log("Infos nouvelles : ", response);
 
   input.general.stack.frontend = response.stack.frontend;
   input.general.stack.backend = response.stack.backend;
@@ -171,7 +173,7 @@ Règles :
 - Pas de lorem ipsum
 - Respecte le style global du projet
 - Réponds uniquement avec le code final.
-- Ne mets pas d'explication, pas de commentaire.
+- Ne mets pas d'explication, PAS DE COMMENTAIRE DANS LE CODE!.
 - Ne parle pas. Encadre le code avec des balises triple backticks si tu veux, mais rien d'autre.
 `;
         return {
@@ -190,22 +192,19 @@ Règles :
 
   traverse(structure, "");
 
+  fs.writeFileSync("Building-todo.json", JSON.stringify(prompts, null, 2));
   return prompts;
 }
 
 async function codeGeneration(todo) {
   for (const { filePath, prompt, partIndex, totalParts } of todo) {
     // console.log(`Prompt : ${prompt}`);
-    console.log(`\nFichier : ${filePath}`);
+    console.log(`Fichier : ${filePath}`);
     const response = await LLMPrompt(prompt, true);
-    if (partIndex === 1) {
-      fs.writeFileSync("Building/" + filePath, response);
-    } else {
-      const content = fs.readFileSync("Building/" + filePath, "utf-8");
-      const newContent =
-        content + (content.endsWith("\n") ? "" : "\n") + response;
-      fs.writeFileSync("Building/" + filePath, newContent);
-    }
+    const content = fs.readFileSync("Building/" + filePath, "utf-8");
+    const newContent =
+      content + (content.endsWith("\n") ? "" : "\n") + response;
+    fs.writeFileSync("Building/" + filePath, newContent);
   }
 }
 

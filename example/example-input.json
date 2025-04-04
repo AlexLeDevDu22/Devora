@@ -7,9 +7,9 @@
     "slogan": "Achetez en ligne avec nous",
     "aboutUs": "Nous sommes une entreprise de e-commerce",
     "stack": {
-      "frontend": "React",
+      "frontend": null,
       "backend": "Node",
-      "database": "MongoDB"
+      "database": null
     },
     "pages": [
       {
